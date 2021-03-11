@@ -12,10 +12,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_of_players);
+        setContentView(R.layout.activity_main);
 
         String[] Positions = new String[] {
-                "Pitcher", "Catcher", "1B", "2B", "SS", "3B", "RF", "MF", "LF" };
+                "Pitcher", "Catcher", "1B", "2B", "SS", "3B", "RF", "CF", "LF" };
         String[] Stats = new String[] {
                 "Hits", "HR", "SB"};
         Spinner posSpin = (Spinner) findViewById(R.id.positionSpinner);

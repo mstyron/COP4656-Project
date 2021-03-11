@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">FantasyBaseball</string>
+    <string name="position">Position</string>
+    <string name="stat">Stat</string>
+    <string name="submit">Submit</string>
     <string-array name="player_names">
         <item>Joe Random</item>
         <item>John Doe</item>
