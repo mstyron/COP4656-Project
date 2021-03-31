@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fantasybaseball">
 
+    <permission android:name="com.example.fantasybaseball.provider.permission.READ_PERMISSION"/>
+    <permission android:name="com.example.fantasybaseball.provider.permission.WRITE_PERMISSION"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FantasyBaseball">
+        <provider
+            android:authorities="com.example.fantasybaseball.provider"
+            android:name=".playerContentProvider"
+            android:enabled="true"
+            android:exported="true"
+            android:readPermission="com.example.fantasybaseball.READ_PERMISSION"
+            android:writePermission="com.example.fantasybaseball.WRITE_PERMISSION">
+
+        </provider>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

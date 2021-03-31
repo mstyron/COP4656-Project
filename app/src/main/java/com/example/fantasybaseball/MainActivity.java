@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        DataInput.inputData(this);
+
         String[] Positions = new String[] {
                 "Pitcher", "Catcher", "1B", "2B", "SS", "3B", "RF", "CF", "LF" };
         String[] Stats = new String[] {
