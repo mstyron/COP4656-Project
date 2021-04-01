@@ -10,19 +10,19 @@
         android:text="Name"
         android:textSize="30sp" />
     <TextView
-        android:id="@+id/hit_text"
+        android:id="@+id/pos_text"
         android:layout_width="75dp"
         android:layout_height="50dp"
-        android:text="Hits"
+        android:text="Pos"
         android:textSize="30sp"
-        android:layout_toRightOf="@id/name_text"/>
+        android:layout_toEndOf="@id/name_text"/>
     <TextView
         android:id="@+id/hr_text"
         android:layout_width="75dp"
         android:layout_height="50dp"
         android:text="HR"
         android:textSize="30sp"
-        android:layout_toRightOf="@id/hit_text"/>
+        android:layout_toEndOf="@id/pos_text"/>
     <ListView
         android:id="@+id/player_list"
         android:layout_below="@id/name_text"
@@ -32,16 +32,16 @@
     <ListView
         android:layout_width="75dp"
         android:layout_height="wrap_content"
-        android:id="@+id/hits_list"
-        android:layout_below="@id/hit_text"
-        android:layout_toRightOf="@id/player_list"
+        android:id="@+id/pos_list"
+        android:layout_below="@id/pos_text"
+        android:layout_toEndOf="@id/player_list"
         android:entries="@array/hit_values"/>
     <ListView
         android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:id="@+id/hr_list"
         android:layout_below="@id/hr_text"
-        android:layout_toRightOf="@id/hits_list"
+        android:layout_toEndOf="@id/pos_list"
         android:entries="@array/homerun_values"/>
 
 </RelativeLayout>

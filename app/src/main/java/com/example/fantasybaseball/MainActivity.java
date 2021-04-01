@@ -2,8 +2,11 @@ package com.example.fantasybaseball;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 
@@ -33,6 +36,15 @@ public class MainActivity extends AppCompatActivity {
 
         posSpin.setAdapter(posAdapter);
         statSpin.setAdapter(statAdapter);
+
+        Button submit = findViewById(R.id.button1);
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), PlayerList.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
