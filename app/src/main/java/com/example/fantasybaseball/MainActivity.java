@@ -21,8 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         String[] Positions = new String[] {
                 "Pitcher", "Catcher", "1B", "2B", "SS", "3B", "RF", "CF", "LF" };
-        String[] Stats = new String[] {
-                "Hits", "HR", "SB"};
+        String[] Stats = new String[] {"Games", "AVG", "OBP",  "SLG", "HR", "SB"};
         Spinner posSpin = (Spinner) findViewById(R.id.positionSpinner);
         Spinner statSpin = (Spinner) findViewById(R.id.statSpinner);
 
