@@ -2,7 +2,10 @@ package com.example.fantasybaseball;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 
 public class playerContentProvider extends ContentProvider {
@@ -20,22 +23,22 @@ public class playerContentProvider extends ContentProvider {
 
     public final static Uri CONTENT_URI = Uri.parse("content://com.example.fantasybaseball.provider/" + TABLE_HITTERS);
     public static String tableName() {
-            return TABLE_HITTERS;
-        }
+        return TABLE_HITTERS;
+    }
     static String getCreateSql()
-        {
-            return "CREATE TABLE "+TABLE_HITTERS+" ( " +
-                    COLUMN_NAME + " VARCHAR(100) PRIMARY KEY, " +
-                    COLUMN_POSITION + " VARCHAR(100) PRIMARY KEY, " +
-                    COLUMN_GAMES + " VARCHAR(100) PRIMARY KEY, " +
-                    COLUMN_AVG + " VARCHAR(100) NOT NULL UNIQUE, " +
-                    COLUMN_OBP + " VARCHAR(100) NOT NULL, " +
-                    COLUMN_SLG + " VARCHAR(6) NOT NULL, "  +
-                    COLUMN_HR + " VARCHAR(100) NOT NULL, " +
-                    COLUMN_SB + " VARCHAR(100) NOT NULL)" +
-                    lastlogin + " DATETIME DEFAULT CURRENT_TIMESTAMP)";
-        }
-    
+    {
+        return "CREATE TABLE "+TABLE_HITTERS+" ( " +
+                COLUMN_NAME + " VARCHAR(100), " +
+                COLUMN_POSITION + " VARCHAR(2), " +
+                COLUMN_GAMES + " INTEGER, " +
+                COLUMN_AVG + " DECIMAL, " +
+                COLUMN_OBP + " DECIMAL, " +
+                COLUMN_SLG + " DECIMAL, "  +
+                COLUMN_HR + " INTEGER, " +
+                COLUMN_SB + " INTEGER)";
+
+    }
+
 
     public static final String SQL_CREATE_MAIN = getCreateSql();
 
@@ -55,12 +58,11 @@ public class playerContentProvider extends ContentProvider {
 
         }
     }
-    public playerContentProvider(){}
     private MainDatabaseHelper helper;
 
     @Override
     public boolean onCreate(){
-       getContext().deleteDatabase(DBNAME);
+        getContext().deleteDatabase(DBNAME);
         helper = new MainDatabaseHelper(getContext());
         return true;
     }
@@ -89,7 +91,7 @@ public class playerContentProvider extends ContentProvider {
 
     @Override
     public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
-         return helper.getWritableDatabase()
+        return helper.getWritableDatabase()
                 .update(tableName(), values, selection, selectionArgs);
     }
 
