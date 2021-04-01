@@ -19,17 +19,56 @@ public class playerContentProvider extends ContentProvider {
     public final static String COLUMN_SB = "sb";                        //int value
 
     public final static Uri CONTENT_URI = Uri.parse("content://com.example.fantasybaseball.provider/" + TABLE_HITTERS);
+    public static String tableName() {
+            return TABLE_HITTERS;
+        }
+    static String getCreateSql()
+        {
+            return "CREATE TABLE "+TABLE_HITTERS+" ( " +
+                    COLUMN_NAME + " VARCHAR(100) PRIMARY KEY, " +
+                    COLUMN_POSITION + " VARCHAR(100) PRIMARY KEY, " +
+                    COLUMN_GAMES + " VARCHAR(100) PRIMARY KEY, " +
+                    COLUMN_AVG + " VARCHAR(100) NOT NULL UNIQUE, " +
+                    COLUMN_OBP + " VARCHAR(100) NOT NULL, " +
+                    COLUMN_SLG + " VARCHAR(6) NOT NULL, "  +
+                    COLUMN_HR + " VARCHAR(100) NOT NULL, " +
+                    COLUMN_SB + " VARCHAR(100) NOT NULL)" +
+                    lastlogin + " DATETIME DEFAULT CURRENT_TIMESTAMP)";
+        }
+    
 
+    public static final String SQL_CREATE_MAIN = getCreateSql();
+
+    private static final class MainDatabaseHelper extends SQLiteOpenHelper {
+
+        MainDatabaseHelper(Context context) {
+            super(context, DBNAME, null, 1);
+        }
+
+        @Override
+        public void onCreate(SQLiteDatabase db) {
+            db.execSQL(SQL_CREATE_MAIN);
+        }
+
+        @Override
+        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+        }
+    }
     public playerContentProvider(){}
+    private MainDatabaseHelper helper;
 
     @Override
     public boolean onCreate(){
+       getContext().deleteDatabase(DBNAME);
+        helper = new MainDatabaseHelper(getContext());
         return true;
     }
 
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
-        return null;
+        return helper.getWritableDatabase()
+                .query(tableName(), projection, selection, selectionArgs, null, null, sortOrder);
     }
 
     @Override
@@ -39,16 +78,19 @@ public class playerContentProvider extends ContentProvider {
 
     @Override
     public Uri insert(Uri uri, ContentValues values) {
-        return null;
+        long id = helper.getWritableDatabase().insert(tableName(), null, values);
+        return Uri.withAppendedPath(CONTENT_URI, "" + id);
     }
 
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
-        return 0;
+        return helper.getWritableDatabase().delete(tableName(), selection, selectionArgs);
     }
 
     @Override
     public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
-        return 0;
+         return helper.getWritableDatabase()
+                .update(tableName(), values, selection, selectionArgs);
     }
+
 }
