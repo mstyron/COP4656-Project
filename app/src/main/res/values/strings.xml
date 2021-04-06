@@ -3,6 +3,11 @@
     <string name="position">Position</string>
     <string name="stat">Stat</string>
     <string name="submit">Submit</string>
+    <string name="name">Player Name</string>
+    <string name="pos">POS</string>
+    <string name="hr">HR</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
     <string-array name="player_names">
         <item>Joe Random</item>
         <item>John Doe</item>
