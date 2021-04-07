@@ -27,8 +27,6 @@ public class PlayerList extends AppCompatActivity {
     Button prevButton;
     Cursor mCursor;
 
-    int playerCount;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,8 +45,6 @@ public class PlayerList extends AppCompatActivity {
         nextButton = findViewById(R.id.nextButton);
         prevButton = findViewById(R.id.previousButton);
 
-        playerCount = 0;
-
         String[] mProjection = new String[] {playerContentProvider.COLUMN_NAME,
                 playerContentProvider.COLUMN_POSITION, playerContentProvider.COLUMN_HR};
         mCursor = getContentResolver().query(playerContentProvider.CONTENT_URI, mProjection,
@@ -66,7 +62,6 @@ public class PlayerList extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int loopBack = 10;
-                playerCount = playerCount - loopBack;
                 for(int i = 0; i < loopBack; i++){
                     mCursor.moveToPrevious();
                 }
@@ -99,35 +94,30 @@ public class PlayerList extends AppCompatActivity {
     public void createList(Cursor mCursor){
         if(mCursor.moveToNext()){
             player1.setText(mCursor.getString(0));
-            playerCount++;
         }
         else{
             player1.setText("");
         }
         if(mCursor.moveToNext()){
             player2.setText(mCursor.getString(0));
-            playerCount++;
         }
         else{
             player2.setText("");
         }
         if(mCursor.moveToNext()){
             player3.setText(mCursor.getString(0));
-            playerCount++;
         }
         else{
             player3.setText("");
         }
         if(mCursor.moveToNext()){
             player4.setText(mCursor.getString(0));
-            playerCount++;
         }
         else{
             player4.setText("");
         }
         if(mCursor.moveToNext()){
             player5.setText(mCursor.getString(0));
-            playerCount++;
         }
         else{
             player5.setText("");
