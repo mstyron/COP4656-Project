@@ -16,51 +16,213 @@
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:text="@string/name"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="30sp"/>
+
+            <TextView
+                android:id="@+id/games_text"
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:layout_toEndOf="@id/name_text"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:text="@string/games"
                 android:textSize="30sp" />
             <TextView
-                android:id="@+id/pos_text"
-                android:layout_width="175dp"
+                android:layout_width="75dp"
                 android:layout_height="50dp"
-                android:text="@string/pos"
+                android:id="@+id/avg_text"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:text="@string/avg"
                 android:textSize="30sp"
-                android:layout_toEndOf="@id/name_text"/>
+                android:layout_toEndOf="@id/games_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:id="@+id/obp_text"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:text="@string/obp"
+                android:textSize="30sp"
+                android:layout_toEndOf="@id/avg_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:id="@+id/ops_text"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:text="@string/ops"
+                android:textSize="30sp"
+                android:layout_toEndOf="@id/obp_text" />
             <TextView
                 android:id="@+id/hr_text"
                 android:layout_width="75dp"
                 android:layout_height="50dp"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
                 android:text="@string/hr"
                 android:textSize="30sp"
-                android:layout_toEndOf="@id/pos_text"/>
+                android:layout_toEndOf="@id/ops_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:id="@+id/sb_text"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:text="@string/sb"
+                android:textSize="30sp"
+                android:layout_toEndOf="@id/hr_text"/>
+
             <TextView
                 android:layout_width="200dp"
-                android:layout_height="50dp"
+                android:layout_height="30dp"
                 android:id="@+id/playerName1"
-                android:textSize="24sp"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
                 android:layout_below="@id/name_text" />
             <TextView
                 android:layout_width="200dp"
-                android:layout_height="50dp"
+                android:layout_height="30dp"
                 android:id="@+id/playerName2"
-                android:textSize="24sp"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
                 android:layout_below="@id/playerName1"/>
             <TextView
                 android:layout_width="200dp"
-                android:layout_height="50dp"
+                android:layout_height="30dp"
                 android:id="@+id/playerName3"
-                android:textSize="24sp"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
                 android:layout_below="@id/playerName2"/>
             <TextView
                 android:layout_width="200dp"
-                android:layout_height="50dp"
+                android:layout_height="30dp"
                 android:id="@+id/playerName4"
-                android:textSize="24sp"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
                 android:layout_below="@id/playerName3"/>
             <TextView
                 android:layout_width="200dp"
-                android:layout_height="50dp"
+                android:layout_height="30dp"
                 android:id="@+id/playerName5"
-                android:textSize="24sp"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
                 android:layout_below="@id/playerName4"/>
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/games1"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/games_text"
+                android:layout_toEndOf="@id/name_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/games2"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/games1"
+                android:layout_toEndOf="@id/name_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/games3"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/games2"
+                android:layout_toEndOf="@id/name_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/games4"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/games3"
+                android:layout_toEndOf="@id/name_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/games5"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/games4"
+                android:layout_toEndOf="@id/name_text"/>
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/avg1"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/avg_text"
+                android:layout_toEndOf="@id/games_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/avg2"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/avg1"
+                android:layout_toEndOf="@id/games_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/avg3"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/avg2"
+                android:layout_toEndOf="@id/games_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/avg4"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/avg3"
+                android:layout_toEndOf="@id/games_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/avg5"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/avg4"
+                android:layout_toEndOf="@id/games_text"/>
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -73,7 +235,8 @@
                 android:id="@+id/nextButton"
                 android:text="@string/next"
                 android:layout_below="@id/playerName5"
-                android:layout_toEndOf="@id/previousButton"/>
+                android:layout_toEndOf="@id/previousButton"
+                android:layout_marginStart="4dp"/>
             <!--<ListView
                 android:id="@+id/player_list"
                 android:layout_below="@id/name_text"

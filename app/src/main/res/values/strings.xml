@@ -5,7 +5,12 @@
     <string name="submit">Submit</string>
     <string name="name">Player Name</string>
     <string name="pos">POS</string>
+    <string name="games">G</string>
+    <string name="avg">AVG</string>
+    <string name="obp">OBP</string>
+    <string name="ops">OPS</string>
     <string name="hr">HR</string>
+    <string name="sb">SB</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string-array name="player_names">
