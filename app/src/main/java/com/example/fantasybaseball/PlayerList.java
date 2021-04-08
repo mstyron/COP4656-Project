@@ -33,6 +33,26 @@ public class PlayerList extends AppCompatActivity {
     TextView avg3;
     TextView avg4;
     TextView avg5;
+    TextView obp1;
+    TextView obp2;
+    TextView obp3;
+    TextView obp4;
+    TextView obp5;
+    TextView ops1;
+    TextView ops2;
+    TextView ops3;
+    TextView ops4;
+    TextView ops5;
+    TextView hr1;
+    TextView hr2;
+    TextView hr3;
+    TextView hr4;
+    TextView hr5;
+    TextView sb1;
+    TextView sb2;
+    TextView sb3;
+    TextView sb4;
+    TextView sb5;
     Button nextButton;
     Button prevButton;
     Cursor mCursor;
@@ -41,10 +61,6 @@ public class PlayerList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_of_players);
-
-        /*ListView players = findViewById(R.id.player_list);
-        ListView positions = findViewById(R.id.pos_list);
-        ListView homeruns = findViewById(R.id.hr_list);*/
 
         player1 = findViewById(R.id.playerName1);
         player2 = findViewById(R.id.playerName2);
@@ -61,12 +77,39 @@ public class PlayerList extends AppCompatActivity {
         avg3 = findViewById(R.id.avg3);
         avg4 = findViewById(R.id.avg4);
         avg5 = findViewById(R.id.avg5);
+        obp1 = findViewById(R.id.obp1);
+        obp2 = findViewById(R.id.obp2);
+        obp3 = findViewById(R.id.obp3);
+        obp4 = findViewById(R.id.obp4);
+        obp5 = findViewById(R.id.obp5);
+        ops1 = findViewById(R.id.ops1);
+        ops2 = findViewById(R.id.ops2);
+        ops3 = findViewById(R.id.ops3);
+        ops4 = findViewById(R.id.ops4);
+        ops5 = findViewById(R.id.ops5);
+        hr1 = findViewById(R.id.hr1);
+        hr2 = findViewById(R.id.hr2);
+        hr3 = findViewById(R.id.hr3);
+        hr4 = findViewById(R.id.hr4);
+        hr5 = findViewById(R.id.hr5);
+        sb1 = findViewById(R.id.sb1);
+        sb2 = findViewById(R.id.sb2);
+        sb3 = findViewById(R.id.sb3);
+        sb4 = findViewById(R.id.sb4);
+        sb5 = findViewById(R.id.sb5);
 
         nextButton = findViewById(R.id.nextButton);
         prevButton = findViewById(R.id.previousButton);
 
-        String[] mProjection = new String[] {playerContentProvider.COLUMN_NAME,
-                playerContentProvider.COLUMN_GAMES, playerContentProvider.COLUMN_AVG};
+        String[] mProjection = new String[] {
+                playerContentProvider.COLUMN_NAME,
+                playerContentProvider.COLUMN_GAMES,
+                playerContentProvider.COLUMN_AVG,
+                playerContentProvider.COLUMN_OBP,
+                playerContentProvider.COLUMN_SLG,
+                playerContentProvider.COLUMN_HR,
+                playerContentProvider.COLUMN_SB
+        };
         mCursor = getContentResolver().query(playerContentProvider.CONTENT_URI, mProjection,
                 null, null, null);
         createList(mCursor);
@@ -88,27 +131,6 @@ public class PlayerList extends AppCompatActivity {
                 createList(mCursor);
             }
         });
-        /*List<String> playerList = new ArrayList<>();
-        List<String> posList = new ArrayList<>();
-        List<String> hrList = new ArrayList<>();
-
-        while(mCursor.moveToNext()){
-            playerList.add(mCursor.getString(0));
-            posList.add(mCursor.getString(1));
-            hrList.add(String.valueOf(mCursor.getInt(2)));
-        }
-        List<Map<String,String>> playersList = new ArrayList<Map<String,String>>();
-        HashMap<String,String> map;
-        for (String i : playerList){
-            map = new HashMap<String, String>();
-            map.put("name", i);
-            playersList.add(map);
-        }
-
-        String[] from = new String[] {playerContentProvider.COLUMN_NAME};
-        int[] to = new int[] {android.R.id.text1};
-        SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(), playersList, android.R.layout.simple_list_item_2, from, to);
-        players.setAdapter(adapter);*/
     }
 
     public void createList(Cursor mCursor){
@@ -116,51 +138,91 @@ public class PlayerList extends AppCompatActivity {
             player1.setText(mCursor.getString(0));
             games1.setText(String.valueOf(mCursor.getInt(1)));
             avg1.setText(floatToString(mCursor.getFloat(2)));
+            obp1.setText(floatToString(mCursor.getFloat(3)));
+            ops1.setText(floatToString(mCursor.getFloat(3) + mCursor.getFloat(4)));
+            hr1.setText(String.valueOf(mCursor.getInt(5)));
+            sb1.setText(String.valueOf(mCursor.getInt(6)));
         }
         else{
             player1.setText("");
             games1.setText("");
             avg1.setText("");
+            obp1.setText("");
+            ops1.setText("");
+            hr1.setText("");
+            sb1.setText("");
         }
         if(mCursor.moveToNext()){
             player2.setText(mCursor.getString(0));
             games2.setText(String.valueOf(mCursor.getInt(1)));
             avg2.setText(floatToString(mCursor.getFloat(2)));
+            obp2.setText(floatToString(mCursor.getFloat(3)));
+            ops2.setText(floatToString(mCursor.getFloat(3) + mCursor.getFloat(4)));
+            hr2.setText(String.valueOf(mCursor.getInt(5)));
+            sb2.setText(String.valueOf(mCursor.getInt(6)));
         }
         else{
             player2.setText("");
             games2.setText("");
             avg2.setText("");
+            obp2.setText("");
+            ops2.setText("");
+            hr2.setText("");
+            sb2.setText("");
         }
         if(mCursor.moveToNext()){
             player3.setText(mCursor.getString(0));
             games3.setText(String.valueOf(mCursor.getInt(1)));
             avg3.setText(floatToString(mCursor.getFloat(2)));
+            obp3.setText(floatToString(mCursor.getFloat(3)));
+            ops3.setText(floatToString(mCursor.getFloat(3) + mCursor.getFloat(4)));
+            hr3.setText(String.valueOf(mCursor.getInt(5)));
+            sb3.setText(String.valueOf(mCursor.getInt(6)));
         }
         else{
             player3.setText("");
             games3.setText("");
             avg3.setText("");
+            obp3.setText("");
+            ops3.setText("");
+            hr3.setText("");
+            sb3.setText("");
         }
         if(mCursor.moveToNext()){
             player4.setText(mCursor.getString(0));
             games4.setText(String.valueOf(mCursor.getInt(1)));
             avg4.setText(floatToString(mCursor.getFloat(2)));
+            obp4.setText(floatToString(mCursor.getFloat(3)));
+            ops4.setText(floatToString(mCursor.getFloat(3) + mCursor.getFloat(4)));
+            hr4.setText(String.valueOf(mCursor.getInt(5)));
+            sb4.setText(String.valueOf(mCursor.getInt(6)));
         }
         else{
             player4.setText("");
             games4.setText("");
             avg4.setText("");
+            obp4.setText("");
+            ops4.setText("");
+            hr4.setText("");
+            sb4.setText("");
         }
         if(mCursor.moveToNext()){
             player5.setText(mCursor.getString(0));
             games5.setText(String.valueOf(mCursor.getInt(1)));
             avg5.setText(floatToString(mCursor.getFloat(2)));
+            obp5.setText(floatToString(mCursor.getFloat(3)));
+            ops5.setText(floatToString(mCursor.getFloat(3) + mCursor.getFloat(4)));
+            hr5.setText(String.valueOf(mCursor.getInt(5)));
+            sb5.setText(String.valueOf(mCursor.getInt(6)));
         }
         else{
             player5.setText("");
             games5.setText("");
             avg5.setText("");
+            obp5.setText("");
+            ops5.setText("");
+            hr5.setText("");
+            sb5.setText("");
         }
     }
 

@@ -19,7 +19,6 @@
                 android:background="@drawable/border"
                 android:paddingLeft="5dp"
                 android:textSize="30sp"/>
-
             <TextView
                 android:id="@+id/games_text"
                 android:layout_width="75dp"
@@ -74,7 +73,7 @@
                 android:text="@string/sb"
                 android:textSize="30sp"
                 android:layout_toEndOf="@id/hr_text"/>
-
+            <!-- player names text holders -->
             <TextView
                 android:layout_width="200dp"
                 android:layout_height="30dp"
@@ -120,7 +119,7 @@
                 android:textSize="18sp"
                 android:textColor="@color/black"
                 android:layout_below="@id/playerName4"/>
-
+            <!-- games text holders -->
             <TextView
                 android:layout_width="75dp"
                 android:layout_height="30dp"
@@ -171,7 +170,7 @@
                 android:textColor="@color/black"
                 android:layout_below="@id/games4"
                 android:layout_toEndOf="@id/name_text"/>
-
+            <!-- avg text holders -->
             <TextView
                 android:layout_width="75dp"
                 android:layout_height="30dp"
@@ -222,6 +221,210 @@
                 android:textColor="@color/black"
                 android:layout_below="@id/avg4"
                 android:layout_toEndOf="@id/games_text"/>
+            <!-- obp text holders -->
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/obp1"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/obp_text"
+                android:layout_toEndOf="@id/avg_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/obp2"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/obp1"
+                android:layout_toEndOf="@id/avg_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/obp3"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/obp2"
+                android:layout_toEndOf="@id/avg_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/obp4"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/obp3"
+                android:layout_toEndOf="@id/avg_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/obp5"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/obp4"
+                android:layout_toEndOf="@id/avg_text"/>
+            <!-- ops text holders -->
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/ops1"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/ops_text"
+                android:layout_toEndOf="@id/obp_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/ops2"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/ops1"
+                android:layout_toEndOf="@id/obp_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/ops3"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/ops2"
+                android:layout_toEndOf="@id/obp_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/ops4"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/ops3"
+                android:layout_toEndOf="@id/obp_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/ops5"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/ops4"
+                android:layout_toEndOf="@id/obp_text"/>
+            <!-- hr text holders -->
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/hr1"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/hr_text"
+                android:layout_toEndOf="@id/ops_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/hr2"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/hr1"
+                android:layout_toEndOf="@id/ops_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/hr3"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/hr2"
+                android:layout_toEndOf="@id/ops_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/hr4"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/hr3"
+                android:layout_toEndOf="@id/ops_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/hr5"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/hr4"
+                android:layout_toEndOf="@id/ops_text"/>
+            <!-- sb text holders -->
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/sb1"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/sb_text"
+                android:layout_toEndOf="@id/hr_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/sb2"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/sb1"
+                android:layout_toEndOf="@id/hr_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/sb3"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/sb2"
+                android:layout_toEndOf="@id/hr_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/sb4"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/sb3"
+                android:layout_toEndOf="@id/hr_text"/>
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:id="@+id/sb5"
+                android:background="@drawable/border"
+                android:paddingLeft="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_below="@id/sb4"
+                android:layout_toEndOf="@id/hr_text"/>
 
             <Button
                 android:layout_width="wrap_content"
@@ -237,30 +440,6 @@
                 android:layout_below="@id/playerName5"
                 android:layout_toEndOf="@id/previousButton"
                 android:layout_marginStart="4dp"/>
-            <!--<ListView
-                android:id="@+id/player_list"
-                android:layout_below="@id/name_text"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:entries="@array/player_names"
-                android:scrollbars="none"
-                android:fastScrollEnabled="false"/>
-            <ListView
-                android:layout_width="75dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/pos_list"
-                android:layout_below="@id/pos_text"
-                android:layout_toEndOf="@id/player_list"
-                android:entries="@array/hit_values"
-                android:scrollbars="none"/>
-            <ListView
-                android:layout_width="75dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/hr_list"
-                android:layout_below="@id/hr_text"
-                android:layout_toEndOf="@id/pos_list"
-                android:entries="@array/homerun_values"
-                android:scrollbars="none"/>-->
 
         </RelativeLayout>
     </HorizontalScrollView>
