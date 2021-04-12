@@ -1,7 +1,9 @@
 package com.example.fantasybaseball;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -11,8 +13,10 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -58,7 +62,14 @@ public class PlayerList extends AppCompatActivity {
     TextView sb5;
     Button nextButton;
     Button prevButton;
+    Button addButton;
     Cursor mCursor;
+
+    boolean p1Clicked = false;
+    boolean p2Clicked = false;
+    boolean p3Clicked = false;
+    boolean p4Clicked = false;
+    boolean p5Clicked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,6 +114,7 @@ public class PlayerList extends AppCompatActivity {
 
         nextButton = findViewById(R.id.nextButton);
         prevButton = findViewById(R.id.previousButton);
+        addButton = findViewById(R.id.addButton);
 
         String[] mProjection = new String[] {
                 playerContentProvider.COLUMN_NAME,
@@ -132,6 +144,123 @@ public class PlayerList extends AppCompatActivity {
                     mCursor.moveToPrevious();
                 }
                 createList(mCursor);
+            }
+        });
+
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String playerName = "";
+                if (p1Clicked){
+                    playerName = String.valueOf(player1.getText());
+                }
+                else if (p2Clicked){
+                    playerName = String.valueOf(player2.getText());
+                }
+                else if (p3Clicked){
+                    playerName = String.valueOf(player3.getText());
+                }
+                else if (p4Clicked){
+                    playerName = String.valueOf(player4.getText());
+                }
+                else if (p5Clicked){
+                    playerName = String.valueOf(player5.getText());
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "No player selected",
+                            Toast.LENGTH_LONG).show();
+                }
+                if (playerName.compareTo("") != 0){
+                    ContentValues contentValues = new ContentValues();
+                    contentValues.put(playerContentProvider.COLUMN_UTEAMPLAYER, true);
+                    String Selection = playerContentProvider.COLUMN_NAME + " = ?";
+                    String[] SelectionArgs = new String[] {playerName};
+                    getContentResolver().update(playerContentProvider.CONTENT_URI, contentValues,
+                            Selection, SelectionArgs);
+                    Toast.makeText(getApplicationContext(), "Player added to team",
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        player1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                player1.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.selected));
+                player2.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.border));
+                player3.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.border));
+                player4.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.border));
+                player5.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.border));
+
+                p1Clicked = true;
+                p2Clicked = false;
+                p3Clicked = false;
+                p4Clicked = false;
+                p5Clicked = false;
+            }
+        });
+        player2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                player2.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.selected));
+                player1.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.border));
+                player3.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.border));
+                player4.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.border));
+                player5.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.border));
+
+                p1Clicked = false;
+                p2Clicked = true;
+                p3Clicked = false;
+                p4Clicked = false;
+                p5Clicked = false;
+            }
+        });
+        player3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                player3.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.selected));
+                player2.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.border));
+                player1.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.border));
+                player4.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.border));
+                player5.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.border));
+
+                p1Clicked = false;
+                p2Clicked = false;
+                p3Clicked = true;
+                p4Clicked = false;
+                p5Clicked = false;
+            }
+        });
+        player4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                player4.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.selected));
+                player2.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.border));
+                player3.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.border));
+                player1.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.border));
+                player5.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.border));
+
+                p1Clicked = false;
+                p2Clicked = false;
+                p3Clicked = false;
+                p4Clicked = true;
+                p5Clicked = false;
+            }
+        });
+        player5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                player5.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.selected));
+                player2.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.border));
+                player3.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.border));
+                player4.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.border));
+                player1.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.border));
+
+                p1Clicked = false;
+                p2Clicked = false;
+                p3Clicked = false;
+                p4Clicked = false;
+                p5Clicked = true;
             }
         });
     }

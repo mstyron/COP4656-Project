@@ -20,6 +20,7 @@ public class playerContentProvider extends ContentProvider {
     public final static String COLUMN_SLG = "slg";                      //float value
     public final static String COLUMN_HR = "hr";                        //int value
     public final static String COLUMN_SB = "sb";                        //int value
+    public final static String COLUMN_UTEAMPLAYER = "uteamplayer";      //boolean value
 
     public final static Uri CONTENT_URI = Uri.parse("content://com.example.fantasybaseball.provider/" + TABLE_HITTERS);
     public static String tableName() {
@@ -35,8 +36,8 @@ public class playerContentProvider extends ContentProvider {
                 COLUMN_OBP + " DECIMAL, " +
                 COLUMN_SLG + " DECIMAL, "  +
                 COLUMN_HR + " INTEGER, " +
-                COLUMN_SB + " INTEGER)";
-
+                COLUMN_SB + " INTEGER, " +
+                COLUMN_UTEAMPLAYER + " BOOLEAN)";
     }
 
 

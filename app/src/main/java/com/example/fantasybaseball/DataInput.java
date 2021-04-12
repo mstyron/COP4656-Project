@@ -24,6 +24,7 @@ public class DataInput {
                 values.put(playerContentProvider.COLUMN_SLG, Float.parseFloat(player[5]));
                 values.put(playerContentProvider.COLUMN_HR, Integer.parseInt(player[6]));
                 values.put(playerContentProvider.COLUMN_SB, Integer.parseInt(player[7]));
+                values.put(playerContentProvider.COLUMN_UTEAMPLAYER, false);
                 context.getContentResolver().insert(playerContentProvider.CONTENT_URI, values);
             }
         }
