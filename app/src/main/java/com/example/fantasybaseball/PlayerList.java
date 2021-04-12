@@ -2,6 +2,9 @@ package com.example.fantasybaseball;
 
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListAdapter;
@@ -131,6 +134,23 @@ public class PlayerList extends AppCompatActivity {
                 createList(mCursor);
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case R.id.exit:
+                finish();
+                break;
+        }
+        return true;
     }
 
     public void createList(Cursor mCursor){
