@@ -37,7 +37,7 @@ public class playerContentProvider extends ContentProvider {
                 COLUMN_SLG + " DECIMAL, "  +
                 COLUMN_HR + " INTEGER, " +
                 COLUMN_SB + " INTEGER, " +
-                COLUMN_UTEAMPLAYER + " BOOLEAN)";
+                COLUMN_UTEAMPLAYER + " VARCHAR(10))";
     }
 
 

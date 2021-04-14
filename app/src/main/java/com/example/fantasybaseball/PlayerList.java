@@ -151,6 +151,7 @@ public class PlayerList extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String playerName = "";
+                boolean full = false;
                 if (p1Clicked){
                     playerName = String.valueOf(player1.getText());
                 }
@@ -170,9 +171,19 @@ public class PlayerList extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "No player selected",
                             Toast.LENGTH_LONG).show();
                 }
-                if (playerName.compareTo("") != 0){
+                String[] projection = new String[] {playerContentProvider.COLUMN_NAME};
+                String selection = playerContentProvider.COLUMN_UTEAMPLAYER + " = ?";
+                String[] selectionArgs = new String[] {"true"};
+                Cursor cursor = getContentResolver().query(playerContentProvider.CONTENT_URI,
+                        projection, selection, selectionArgs, null);
+                if (cursor.getCount() == 10){
+                    Toast.makeText(getApplicationContext(), "Too many players on team",
+                            Toast.LENGTH_LONG).show();
+                    full = true;
+                }
+                if (playerName.compareTo("") != 0 && !full){
                     ContentValues contentValues = new ContentValues();
-                    contentValues.put(playerContentProvider.COLUMN_UTEAMPLAYER, true);
+                    contentValues.put(playerContentProvider.COLUMN_UTEAMPLAYER, "true");
                     String Selection = playerContentProvider.COLUMN_NAME + " = ?";
                     String[] SelectionArgs = new String[] {playerName};
                     getContentResolver().update(playerContentProvider.CONTENT_URI, contentValues,
@@ -180,6 +191,7 @@ public class PlayerList extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Player added to team",
                             Toast.LENGTH_LONG).show();
                 }
+                cursor.close();
             }
         });
 

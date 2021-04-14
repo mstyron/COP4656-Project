@@ -45,6 +45,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button view = findViewById(R.id.viewTeamButton);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), TeamList.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

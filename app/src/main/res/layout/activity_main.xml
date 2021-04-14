@@ -45,5 +45,11 @@
         android:onClick="verify"
         android:text="@string/submit"
         android:textStyle="bold" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/viewTeamButton"
+        android:layout_below="@id/positionSpinner"
+        android:text="View Team"/>
 
 </RelativeLayout>

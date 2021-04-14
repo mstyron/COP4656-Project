@@ -31,6 +31,9 @@
         <activity android:name=".PlayerList">
 
         </activity>
+        <activity android:name=".TeamList">
+
+        </activity>
     </application>
 
 </manifest>
