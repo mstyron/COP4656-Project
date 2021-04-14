@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         DataInput.inputData(this);
 
         String[] Positions = new String[] {
-                "Pitcher", "Catcher", "1B", "2B", "SS", "3B", "RF", "CF", "LF" };
+                "C", "1B", "2B", "SS", "3B", "LF", "CF", "RF" };
         String[] Stats = new String[] {"games", "avg", "obp",  "slg", "hr", "sb"};
         Spinner posSpin = (Spinner) findViewById(R.id.positionSpinner);
         Spinner statSpin = (Spinner) findViewById(R.id.statSpinner);

@@ -128,7 +128,7 @@ public class PlayerList extends AppCompatActivity {
         };
 
         String Selection=playerContentProvider.COLUMN_POSITION + " = ?";
-        String[] SelectionArgs=getIntent().getExtras().getStringArray("position");
+        String[] SelectionArgs= new String[] {getIntent().getExtras().getString("position")};
 
         mCursor = getContentResolver().query(playerContentProvider.CONTENT_URI, mProjection,
                 Selection, SelectionArgs,  getIntent().getExtras().getString("stat") + " DESC");
