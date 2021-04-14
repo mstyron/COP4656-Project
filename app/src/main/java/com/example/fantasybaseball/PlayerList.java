@@ -305,7 +305,7 @@ public class PlayerList extends AppCompatActivity {
             games1.setText(String.valueOf(mCursor.getInt(1)));
             avg1.setText(floatToString(mCursor.getFloat(2)));
             obp1.setText(floatToString(mCursor.getFloat(3)));
-            ops1.setText(floatToString(mCursor.getFloat(3) + mCursor.getFloat(4)));
+            ops1.setText(floatToString(mCursor.getFloat(4)));
             hr1.setText(String.valueOf(mCursor.getInt(5)));
             sb1.setText(String.valueOf(mCursor.getInt(6)));
         }
@@ -323,7 +323,7 @@ public class PlayerList extends AppCompatActivity {
             games2.setText(String.valueOf(mCursor.getInt(1)));
             avg2.setText(floatToString(mCursor.getFloat(2)));
             obp2.setText(floatToString(mCursor.getFloat(3)));
-            ops2.setText(floatToString(mCursor.getFloat(3) + mCursor.getFloat(4)));
+            ops2.setText(floatToString(mCursor.getFloat(4)));
             hr2.setText(String.valueOf(mCursor.getInt(5)));
             sb2.setText(String.valueOf(mCursor.getInt(6)));
         }
@@ -341,7 +341,7 @@ public class PlayerList extends AppCompatActivity {
             games3.setText(String.valueOf(mCursor.getInt(1)));
             avg3.setText(floatToString(mCursor.getFloat(2)));
             obp3.setText(floatToString(mCursor.getFloat(3)));
-            ops3.setText(floatToString(mCursor.getFloat(3) + mCursor.getFloat(4)));
+            ops3.setText(floatToString(mCursor.getFloat(4)));
             hr3.setText(String.valueOf(mCursor.getInt(5)));
             sb3.setText(String.valueOf(mCursor.getInt(6)));
         }
@@ -359,7 +359,7 @@ public class PlayerList extends AppCompatActivity {
             games4.setText(String.valueOf(mCursor.getInt(1)));
             avg4.setText(floatToString(mCursor.getFloat(2)));
             obp4.setText(floatToString(mCursor.getFloat(3)));
-            ops4.setText(floatToString(mCursor.getFloat(3) + mCursor.getFloat(4)));
+            ops4.setText(floatToString(mCursor.getFloat(4)));
             hr4.setText(String.valueOf(mCursor.getInt(5)));
             sb4.setText(String.valueOf(mCursor.getInt(6)));
         }
@@ -377,7 +377,7 @@ public class PlayerList extends AppCompatActivity {
             games5.setText(String.valueOf(mCursor.getInt(1)));
             avg5.setText(floatToString(mCursor.getFloat(2)));
             obp5.setText(floatToString(mCursor.getFloat(3)));
-            ops5.setText(floatToString(mCursor.getFloat(3) + mCursor.getFloat(4)));
+            ops5.setText(floatToString(mCursor.getFloat(4)));
             hr5.setText(String.valueOf(mCursor.getInt(5)));
             sb5.setText(String.valueOf(mCursor.getInt(6)));
         }

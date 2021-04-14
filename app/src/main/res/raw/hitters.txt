@@ -11,3 +11,29 @@ Joey Wendle, 3B, 50, .286, .342, .435, 4, 8
 Manuel Margot, RF, 47, .269, .327, .352, 1, 12
 Mike Brosseau, 2B, 36, .302, .378, .558, 5, 2
 Randy Arozarena, LF, 23, .281, .382, .641, 7, 4
+Gary Sanchez, C, 49, .147, .253, .365, 10, 0
+Luke Voit, 1B, 56, .277, .338, .610, 22, 0
+DJ LeMahieu, 2B, 50, .364, .421, .590, 10, 3
+Gleyber Torres, SS, 42, .243, .356, .368, 3, 1
+Gio Urshela, 3B, 43, .298, .368, .490, 6, 1
+Brett Gardner, LF, 49, .223, .354, .392, 5, 3
+Aaron Hicks, CF, 54, .225, .379, .414, 6, 4
+Clint Frazier, RF, 39, .267, .394, .511, 8, 3
+Giancarlo Stanton, LF, 23, .250, .387, .500, 4, 1
+Aaron Judge, RF, 28, .257, .336, .554, 9, 0
+Mike Tauchman, CF, 43, .242, .342, .305, 0, 6
+Tyler Wade, 2B, 52, .170, .288, .307, 3, 4
+Kyle Higashioka, C, 16, .250, .250, .521, 4, 0
+Danny Jansen, C, 43, .183, .313, .358, 6, 0
+Vladimir Guerrero Jr, 1B, 60, .262, .329, .462, 9, 1
+Cavan Biggio, 2B, 59, .250, .375, .432, 8, 6
+Bo Bichette, SS, 29, .301, .328, .512, 5, 4
+Travis Shaw, 3B, 50, .239, .306, .411, 6, 0
+Lourdes Gurriel Jr, LF, 57, .308, .348, .534, 11, 3
+Randal Grichuk, CF, 55, .273, .312, .481, 12, 1
+Teoscar Hernandez, RF, 50, .289, .340, .579, 16, 6
+Rowdy Tellez, 1B, 35, .283, .346, .540, 8, 0
+Joe Panik, SS, 41, .225, .340, .300, 1, 0
+Jonathan Villar, 2B, 22, .188, .278, .203, 0, 7
+Derek Fisher, CF, 16, .226, .359, .452, 1, 0
+Alejandro Kirk, C, 9, .375, .400, .583, 1, 0
