@@ -116,6 +116,7 @@ public class PlayerList extends AppCompatActivity {
         prevButton = findViewById(R.id.previousButton);
         addButton = findViewById(R.id.addButton);
 
+
         String[] mProjection = new String[] {
                 playerContentProvider.COLUMN_NAME,
                 playerContentProvider.COLUMN_GAMES,
@@ -125,8 +126,12 @@ public class PlayerList extends AppCompatActivity {
                 playerContentProvider.COLUMN_HR,
                 playerContentProvider.COLUMN_SB
         };
+
+        String Selection=playerContentProvider.COLUMN_POSITION + " = ?";
+        String[] SelectionArgs=getIntent().getExtras().getStringArray("position");
+
         mCursor = getContentResolver().query(playerContentProvider.CONTENT_URI, mProjection,
-                null, null, null);
+                Selection, SelectionArgs,  getIntent().getExtras().getString("stat") + " DESC");
         createList(mCursor);
 
         nextButton.setOnClickListener(new View.OnClickListener() {

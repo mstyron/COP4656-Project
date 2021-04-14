@@ -37,7 +37,7 @@
         android:spinnerMode="dropdown" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/submitButton"
         android:layout_width="108dp"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/stat_text"
