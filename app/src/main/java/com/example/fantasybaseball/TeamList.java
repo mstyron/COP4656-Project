@@ -1,11 +1,14 @@
 package com.example.fantasybaseball;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,7 +23,9 @@ public class TeamList extends AppCompatActivity {
     TextView player8;
     TextView player9;
     TextView player10;
+    EditText playerRemove;
     Button sim;
+    Button remove;
 
     Cursor mCursor;
 
@@ -39,7 +44,9 @@ public class TeamList extends AppCompatActivity {
         player8 = findViewById(R.id.teamPlayer8);
         player9 = findViewById(R.id.teamPlayer9);
         player10 = findViewById(R.id.teamPlayer10);
+        playerRemove = findViewById(R.id.playerEditText);
         sim = findViewById(R.id.simButton);
+        remove = findViewById(R.id.removeButton);
 
         //finds all players on the users team
         String[] mProjection = new String[] {
@@ -51,7 +58,50 @@ public class TeamList extends AppCompatActivity {
         mCursor = getContentResolver().query(playerContentProvider.CONTENT_URI,
                 mProjection, selection, selectionArgs, null);
 
-        //Displays each players name and position
+        display();
+
+        //Starts the simulation activity
+        sim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Simulator.class);
+                startActivity(intent);
+            }
+        });
+
+        //Removes a player from the team
+        remove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String name = String.valueOf(playerRemove.getText());
+                playerRemove.setText("");
+                ContentValues contentValues = new ContentValues();
+                contentValues.put(playerContentProvider.COLUMN_UTEAMPLAYER, "false");
+                String Selection = playerContentProvider.COLUMN_NAME + " = ?";
+                String[] SelectionArgs = new String[] {name};
+                int updated = getContentResolver().update(playerContentProvider.CONTENT_URI, contentValues,
+                        Selection, SelectionArgs);
+                if(updated == 0){
+                    Toast.makeText(getApplicationContext(), "Player not found.",
+                            Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    String[] mProjection = new String[] {
+                            playerContentProvider.COLUMN_POSITION,
+                            playerContentProvider.COLUMN_NAME};
+                    String selection = playerContentProvider.COLUMN_UTEAMPLAYER + " = ?";
+                    String[] selectionArgs = new String[] {"true"};
+
+                    mCursor = getContentResolver().query(playerContentProvider.CONTENT_URI,
+                            mProjection, selection, selectionArgs, null);
+                    clearDisplay();
+                    display();
+                }
+            }
+        });
+    }
+    //Displays each player on the team and their position
+    public void display(){
         if(mCursor.moveToNext()) {
             player1.setText(String.format("1.  %s  %s", mCursor.getString(0), mCursor.getString(1)));
         }
@@ -83,13 +133,18 @@ public class TeamList extends AppCompatActivity {
             player10.setText(String.format("10. %s  %s", mCursor.getString(0), mCursor.getString(1)));
         }
 
-        //Starts the simulation activity
-        sim.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Simulator.class);
-                startActivity(intent);
-            }
-        });
+    }
+
+    public void clearDisplay(){
+        player1.setText("");
+        player2.setText("");
+        player3.setText("");
+        player4.setText("");
+        player5.setText("");
+        player6.setText("");
+        player7.setText("");
+        player8.setText("");
+        player9.setText("");
+        player10.setText("");
     }
 }

@@ -20,8 +20,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Runs DataInput to add players to database
-        DataInput.inputData(this);
+        //Runs DataInput to add players to database if they aren't in already
+        String[] mProjection = new String[] {playerContentProvider.COLUMN_NAME};
+        Cursor mCursor = getContentResolver().query(playerContentProvider.CONTENT_URI,
+                mProjection, null, null, null);
+        if(mCursor.getCount() < 1) {
+            DataInput.inputData(this);
+        }
+        mCursor.close();
 
         String[] Positions = new String[] {
                 "C", "1B", "2B", "SS", "3B", "LF", "CF", "RF" };
