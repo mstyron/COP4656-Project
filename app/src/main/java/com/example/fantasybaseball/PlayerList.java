@@ -65,6 +65,7 @@ public class PlayerList extends AppCompatActivity {
     Button addButton;
     Cursor mCursor;
 
+    //booleans to check if certain players are clicked or not
     boolean p1Clicked = false;
     boolean p2Clicked = false;
     boolean p3Clicked = false;
@@ -127,6 +128,7 @@ public class PlayerList extends AppCompatActivity {
                 playerContentProvider.COLUMN_SB
         };
 
+        //Sets up query to limit players based on position and order based on stat given
         String Selection=playerContentProvider.COLUMN_POSITION + " = ?";
         String[] SelectionArgs= new String[] {getIntent().getExtras().getString("position")};
 
@@ -134,6 +136,7 @@ public class PlayerList extends AppCompatActivity {
                 Selection, SelectionArgs,  getIntent().getExtras().getString("stat") + " DESC");
         createList(mCursor);
 
+        //Runs createList to show the next set of players
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -141,6 +144,7 @@ public class PlayerList extends AppCompatActivity {
             }
         });
 
+        //Moves the cursor back to the beginning and shows the list
         prevButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -150,6 +154,7 @@ public class PlayerList extends AppCompatActivity {
             }
         });
 
+        //Adds the selected player to the team list
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -179,11 +184,15 @@ public class PlayerList extends AppCompatActivity {
                 String[] selectionArgs = new String[] {"true"};
                 Cursor cursor = getContentResolver().query(playerContentProvider.CONTENT_URI,
                         projection, selection, selectionArgs, null);
+
+                //Checks if there are already 10 players on team
                 if (cursor.getCount() == 10){
                     Toast.makeText(getApplicationContext(), "Too many players on team",
                             Toast.LENGTH_LONG).show();
                     full = true;
                 }
+
+                //Adds player to team by giving it the true value in the UTEAMPLAYER column
                 if (playerName.compareTo("") != 0 && !full){
                     ContentValues contentValues = new ContentValues();
                     contentValues.put(playerContentProvider.COLUMN_UTEAMPLAYER, "true");
@@ -197,7 +206,8 @@ public class PlayerList extends AppCompatActivity {
                 cursor.close();
             }
         });
-
+        
+        //Each player textView gets an onClickListener and will deselect other players
         player1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -296,7 +306,7 @@ public class PlayerList extends AppCompatActivity {
         }
         return true;
     }
-
+    //Goes through the cursor of players and fills in their stats based on the layout of the table
     public void createList(Cursor mCursor){
         if(mCursor.moveToNext()){
             player1.setText(mCursor.getString(0));
@@ -389,7 +399,7 @@ public class PlayerList extends AppCompatActivity {
             sb5.setText("");
         }
     }
-
+    //A way to ensure floats given are represented as 3 digit places
     public String floatToString(float num){
         return String.format("%.3f", num);
     }

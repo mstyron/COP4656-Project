@@ -107,6 +107,7 @@ public class Simulator extends AppCompatActivity {
         addButton.setVisibility(View.GONE);
         simButton.setVisibility(View.VISIBLE);
 
+        //Seeding Random number generator and assigning primary random values
         SecureRandom random = new SecureRandom();
         random.setSeed(random.generateSeed(40));
         rand1 = random.nextInt(40) - 20;
@@ -124,6 +125,8 @@ public class Simulator extends AppCompatActivity {
                 playerContentProvider.COLUMN_HR,
                 playerContentProvider.COLUMN_SB
         };
+
+        //Selects players in database that are on the users team
         String Selection = playerContentProvider.COLUMN_UTEAMPLAYER + " = ?";
         String[] SelectionArgs = new String[] {"true"};
 
@@ -132,6 +135,8 @@ public class Simulator extends AppCompatActivity {
 
         Simulate();
 
+        //Gives new randomness values for more variation of the simulation, then goes back to the
+        //beginning to simulate the stats again
         simButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -163,6 +168,7 @@ public class Simulator extends AppCompatActivity {
         });
     }
 
+    //Passes each value into their respective sim function to simulate their statistics
     public void Simulate(){
         if(mCursor.moveToNext()){
             player1.setText(mCursor.getString(0));
@@ -260,6 +266,7 @@ public class Simulator extends AppCompatActivity {
         return String.format("%.3f", num);
     }
 
+    //Simulates amount of games the player is likely to play with some randomness
     public int simGames(int games, int rand){
         games = (int) Math.round(games * 2.7);
         games = games + rand;
@@ -272,18 +279,21 @@ public class Simulator extends AppCompatActivity {
         return games;
     }
 
+    //Simulates their average with some randomness
     public float simAverage(float avg, int rand){
         float newRand = (float) (rand * .001);
         avg = avg + newRand;
         return avg;
     }
 
+    //Simulates both OBP and SLG with some randomness
     public float simOPS(float ops, int rand){
         float newRand = (float) (rand * .002);
         ops = ops + newRand;
         return ops;
     }
 
+    //Simulates HR with some randomness
     public int simHR(int hr, int rand){
         hr = (int) Math.round(hr * 2.7);
         rand = (int) Math.round(rand / 3.5);
@@ -294,6 +304,7 @@ public class Simulator extends AppCompatActivity {
         return hr;
     }
 
+    //Simulates SB with some randomness
     public int simSB(int sb){
         return (int) Math.round(sb * 2.7);
     }

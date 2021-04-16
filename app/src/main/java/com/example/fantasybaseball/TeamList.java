@@ -41,6 +41,7 @@ public class TeamList extends AppCompatActivity {
         player10 = findViewById(R.id.teamPlayer10);
         sim = findViewById(R.id.simButton);
 
+        //finds all players on the users team
         String[] mProjection = new String[] {
                 playerContentProvider.COLUMN_POSITION,
                 playerContentProvider.COLUMN_NAME};
@@ -50,6 +51,7 @@ public class TeamList extends AppCompatActivity {
         mCursor = getContentResolver().query(playerContentProvider.CONTENT_URI,
                 mProjection, selection, selectionArgs, null);
 
+        //Displays each players name and position
         if(mCursor.moveToNext()) {
             player1.setText(String.format("1.  %s  %s", mCursor.getString(0), mCursor.getString(1)));
         }
@@ -81,6 +83,7 @@ public class TeamList extends AppCompatActivity {
             player10.setText(String.format("10. %s  %s", mCursor.getString(0), mCursor.getString(1)));
         }
 
+        //Starts the simulation activity
         sim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

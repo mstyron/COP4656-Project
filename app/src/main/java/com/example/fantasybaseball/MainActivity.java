@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Runs DataInput to add players to database
         DataInput.inputData(this);
 
         String[] Positions = new String[] {
@@ -49,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
                 String position=posSpin.getSelectedItem().toString();
                 String stats=statSpin.getSelectedItem().toString();
 
+                //Collects the position and stat selection and sends it to PlayerList to query
+                //Based on information given here
                 Intent intent = new Intent(getApplicationContext(), PlayerList.class);
                 Bundle bundle=new Bundle();
                 bundle.putString("position",position);
@@ -62,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Runs the TeamList intent
                 Intent intent = new Intent(getApplicationContext(), TeamList.class);
                 startActivity(intent);
             }

@@ -10,9 +10,13 @@ import java.io.*;
 public class DataInput {
     public static void inputData(Context context){
         try{
+            //Opens raw text file hitters and grabs each line
             InputStream stream = context.getResources().openRawResource(R.raw.hitters);
             BufferedReader input = new BufferedReader(new InputStreamReader(stream));
             String line;
+
+            //Each line corresponds to a player and their statistics
+            //Each player is then added to the database
             while((line = input.readLine()) != null) {
                 String[] player = line.split(", ");
                 ContentValues values = new ContentValues();
