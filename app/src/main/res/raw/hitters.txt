@@ -37,3 +37,16 @@ Joe Panik, SS, 41, .225, .340, .300, 1, 0
 Jonathan Villar, 2B, 22, .188, .278, .203, 0, 7
 Derek Fisher, CF, 16, .226, .359, .452, 1, 0
 Alejandro Kirk, C, 9, .375, .400, .583, 1, 0
+Christian Vazquez, C, 47, .283, .344, .457, 7, 4
+Michael Chavis, 1B, 42, .212, .259, .377, 5, 3
+Jose Peraza, 2B, 34, .225, .275, .342, 1, 1
+Xander Bogaerts, SS, 56, .300, .364, .502, 11, 8
+Rafael Devers, 3B, 57, .263, .310, .483, 11, 0
+Andrew Benintendi, LF, 14, .103, .314, .128, 0, 1
+Jackie Bradley Jr, CF, 55, .283, .364, .450, 7, 5
+Alex Verdugo, RF, 53, .308, .367, .478, 6, 4
+JD Martinez, LF, 54, .213, .291, .389, 7, 1
+Kevin Pillar, RF, 30, .274, .325, .470, 4, 1
+Bobby Dalbec, 1B, 30, .263, .359, .600, 8, 0
+Kevin Plawecki, C, 24, .341, .393, .453, 1, 1
+Mitch Moreland, 1B, 22, .328, .430, .746, 8, 0

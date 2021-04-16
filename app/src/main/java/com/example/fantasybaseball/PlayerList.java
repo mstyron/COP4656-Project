@@ -144,10 +144,8 @@ public class PlayerList extends AppCompatActivity {
         prevButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int loopBack = 10;
-                for(int i = 0; i < loopBack; i++){
-                    mCursor.moveToPrevious();
-                }
+                mCursor.moveToFirst();
+                mCursor.moveToPrevious();
                 createList(mCursor);
             }
         });

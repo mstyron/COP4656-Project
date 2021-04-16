@@ -458,6 +458,15 @@
                 android:layout_below="@id/playerName5"
                 android:layout_toEndOf="@id/nextButton"
                 android:layout_marginStart="4dp"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/simulateButton"
+                android:text="@string/simulate"
+                android:layout_below="@id/playerName5"
+                android:layout_toEndOf="@id/nextButton"
+                android:layout_marginStart="4dp"
+                android:visibility="gone"/>
 
         </RelativeLayout>
     </HorizontalScrollView>

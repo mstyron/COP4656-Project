@@ -6,7 +6,7 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_height="60dp"
         android:text="@string/yourteam"
         android:textSize="36sp"
         android:textColor="@color/black"/>
@@ -80,5 +80,12 @@
         android:textColor="@color/black"
         android:textSize="22sp"
         android:layout_marginStart="5dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/simButton"
+        android:text="@string/sim"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="10dp"/>
 
 </LinearLayout>

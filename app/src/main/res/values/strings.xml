@@ -14,6 +14,8 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="add">Add</string>
+    <string name="simulate">Simulate</string>
+    <string name="sim">Sim Stats</string>
     <string name="yourteam">Your Team</string>
     <string-array name="player_names">
         <item>Joe Random</item>

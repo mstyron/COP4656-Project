@@ -1,7 +1,10 @@
 package com.example.fantasybaseball;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +20,7 @@ public class TeamList extends AppCompatActivity {
     TextView player8;
     TextView player9;
     TextView player10;
+    Button sim;
 
     Cursor mCursor;
 
@@ -35,6 +39,7 @@ public class TeamList extends AppCompatActivity {
         player8 = findViewById(R.id.teamPlayer8);
         player9 = findViewById(R.id.teamPlayer9);
         player10 = findViewById(R.id.teamPlayer10);
+        sim = findViewById(R.id.simButton);
 
         String[] mProjection = new String[] {
                 playerContentProvider.COLUMN_POSITION,
@@ -75,5 +80,13 @@ public class TeamList extends AppCompatActivity {
         if(mCursor.moveToNext()) {
             player10.setText(String.format("10. %s  %s", mCursor.getString(0), mCursor.getString(1)));
         }
+
+        sim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Simulator.class);
+                startActivity(intent);
+            }
+        });
     }
 }
