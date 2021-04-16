@@ -36,7 +36,16 @@
         </activity>
         <activity android:name=".Simulator">
 
+
         </activity>
+        <activity android:name=".AddPlayer">
+
+
+        </activity>
+
+
+
+
     </application>
 
 </manifest>
