@@ -63,7 +63,6 @@ public class playerContentProvider extends ContentProvider {
 
     @Override
     public boolean onCreate(){
-        getContext().deleteDatabase(DBNAME);
         helper = new MainDatabaseHelper(getContext());
         return true;
     }

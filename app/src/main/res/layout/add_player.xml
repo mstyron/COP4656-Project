@@ -39,7 +39,7 @@
         android:layout_width="154dp"
         android:layout_height="50dp"
         android:layout_below="@id/name_text"
-        android:text="Name"
+        android:text="Games"
         android:textSize="30sp" />
     <EditText
         android:id="@+id/games_edit"
@@ -81,17 +81,17 @@
         android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/obs_text"
+        android:id="@+id/slg_text"
         android:layout_width="154dp"
         android:layout_height="50dp"
         android:layout_below="@id/obp_text"
-        android:text="OBS"
+        android:text="SLG"
         android:textSize="30sp" />
     <EditText
-        android:id="@+id/obs_edit"
+        android:id="@+id/slg_edit"
         android:layout_width="154dp"
         android:layout_height="50dp"
-        android:layout_toEndOf="@id/obs_text"
+        android:layout_toEndOf="@id/slg_text"
         android:layout_below="@id/obp_text"
         android:textSize="30sp" />
 
@@ -99,7 +99,7 @@
         android:id="@+id/hr_text"
         android:layout_width="154dp"
         android:layout_height="50dp"
-        android:layout_below="@id/obs_text"
+        android:layout_below="@id/slg_text"
         android:text="HR"
         android:textSize="30sp" />
     <EditText
@@ -107,7 +107,7 @@
         android:layout_width="154dp"
         android:layout_height="50dp"
         android:layout_toEndOf="@id/hr_text"
-        android:layout_below="@id/obs_text"
+        android:layout_below="@id/slg_text"
         android:textSize="30sp" />
 
     <TextView
@@ -125,24 +125,11 @@
         android:layout_below="@id/hr_text"
         android:textSize="30sp" />
 
-
-
-
-
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/viewTeamButton"
-        android:layout_below="@id/sb_edit"
-        android:text="View Team"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/addPlayerButton"
         android:layout_below="@id/sb_edit"
-        android:text="Add Player"
-        android:layout_toEndOf="@id/viewTeamButton"/>
+        android:text="Add Player"/>
 
 </RelativeLayout>

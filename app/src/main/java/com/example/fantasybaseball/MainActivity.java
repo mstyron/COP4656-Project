@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Runs the TeamList intent
+                //Runs the AddPlayer intent
                 Intent intent = new Intent(getApplicationContext(), AddPlayer.class);
                 startActivity(intent);
             }
