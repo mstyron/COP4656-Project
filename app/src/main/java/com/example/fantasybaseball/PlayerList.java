@@ -206,7 +206,7 @@ public class PlayerList extends AppCompatActivity {
                 cursor.close();
             }
         });
-        
+
         //Each player textView gets an onClickListener and will deselect other players
         player1.setOnClickListener(new View.OnClickListener() {
             @Override
