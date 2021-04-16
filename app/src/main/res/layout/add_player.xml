@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/position_text"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="@string/position"
+        android:textSize="30sp" />
+    <Spinner
+        android:id="@+id/positionSpinner"
+        android:layout_width="154dp"
+        android:layout_height="55dp"
+        android:layout_toEndOf="@id/position_text"
+        android:background="@android:drawable/btn_dropdown"
+
+        android:spinnerMode="dropdown" />
+
+    <TextView
+        android:id="@+id/name_text"
+        android:layout_width="154dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/position_text"
+        android:text="Name"
+        android:textSize="30sp" />
+    <EditText
+        android:id="@+id/name_edit"
+        android:layout_width="154dp"
+        android:layout_height="50dp"
+        android:layout_toEndOf="@id/name_text"
+        android:layout_below="@id/position_text"
+        android:textSize="30sp" />
+
+
+    <TextView
+        android:id="@+id/games_text"
+        android:layout_width="154dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/name_text"
+        android:text="Name"
+        android:textSize="30sp" />
+    <EditText
+        android:id="@+id/games_edit"
+        android:layout_width="154dp"
+        android:layout_height="50dp"
+        android:layout_toEndOf="@id/games_text"
+        android:layout_below="@id/name_text"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/avg_text"
+        android:layout_width="154dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/games_text"
+        android:text="AVG"
+        android:textSize="30sp" />
+    <EditText
+        android:id="@+id/avg_edit"
+        android:layout_width="154dp"
+        android:layout_height="50dp"
+        android:layout_toEndOf="@id/avg_text"
+        android:layout_below="@id/games_text"
+        android:textSize="30sp" />
+
+
+    <TextView
+        android:id="@+id/obp_text"
+        android:layout_width="154dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/avg_text"
+        android:text="OBP"
+        android:textSize="30sp" />
+    <EditText
+        android:id="@+id/obp_edit"
+        android:layout_width="154dp"
+        android:layout_height="50dp"
+        android:layout_toEndOf="@id/obp_text"
+        android:layout_below="@id/avg_text"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/obs_text"
+        android:layout_width="154dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/obp_text"
+        android:text="OBS"
+        android:textSize="30sp" />
+    <EditText
+        android:id="@+id/obs_edit"
+        android:layout_width="154dp"
+        android:layout_height="50dp"
+        android:layout_toEndOf="@id/obs_text"
+        android:layout_below="@id/obp_text"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/hr_text"
+        android:layout_width="154dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/obs_text"
+        android:text="HR"
+        android:textSize="30sp" />
+    <EditText
+        android:id="@+id/hr_edit"
+        android:layout_width="154dp"
+        android:layout_height="50dp"
+        android:layout_toEndOf="@id/hr_text"
+        android:layout_below="@id/obs_text"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/sb_text"
+        android:layout_width="154dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/hr_text"
+        android:text="SB"
+        android:textSize="30sp" />
+    <EditText
+        android:id="@+id/sb_edit"
+        android:layout_width="154dp"
+        android:layout_height="50dp"
+        android:layout_toEndOf="@id/sb_text"
+        android:layout_below="@id/hr_text"
+        android:textSize="30sp" />
+
+
+
+
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/viewTeamButton"
+        android:layout_below="@id/sb_edit"
+        android:text="View Team"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addPlayerButton"
+        android:layout_below="@id/sb_edit"
+        android:text="Add Player"
+        android:layout_toEndOf="@id/viewTeamButton"/>
+
+</RelativeLayout>

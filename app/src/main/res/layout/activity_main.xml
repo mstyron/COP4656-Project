@@ -51,5 +51,12 @@
         android:id="@+id/viewTeamButton"
         android:layout_below="@id/positionSpinner"
         android:text="View Team"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addPlayerButton"
+        android:layout_below="@id/positionSpinner"
+        android:text="Add Player"
+        android:layout_toEndOf="@id/viewTeamButton"/>
 
 </RelativeLayout>
